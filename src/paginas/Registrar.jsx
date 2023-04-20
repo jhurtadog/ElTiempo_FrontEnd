@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import Alerta from '../components/Alerta'
 import clienteAxios from '../config/clienteAxios'
 
 const Registrar = () => {
+    const navigate = useNavigate();
     const [nombre, setNombre] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -49,6 +51,9 @@ const Registrar = () => {
             setEmail('')
             setPassword('')
             setRepetirPassword('')
+            setTimeout(() => {
+                navigate('/')
+            }, 1200);
         } catch (error) {
             setAlerta({
                 msg: error.response.data.msg,

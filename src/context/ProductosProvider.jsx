@@ -12,18 +12,18 @@ const ProductosProvider = ({ children }) => {
     const [cargando, setCargando] = useState(false);
     const navigate = useNavigate();
     const { auth } = useAuth()
+    const token = localStorage.getItem('token')
+    const config = {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+    }
 
     useEffect(() => {
         const obtenerProductos = async () => {
             try {
-                const token = localStorage.getItem('token')
                 if (!token) return
-                const config = {
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${token}`
-                    }
-                }
                 const { data } = await clienteAxios('/productos', config)
                 setProductos(data)
             } catch (error) {
@@ -38,7 +38,7 @@ const ProductosProvider = ({ children }) => {
         setAlerta(alerta)
         setTimeout(() => {
             setAlerta({})
-        }, 5000);
+        }, 1000);
     }
 
     const submitProducto = async producto => {
@@ -51,15 +51,7 @@ const ProductosProvider = ({ children }) => {
 
     const editarProducto = async producto => {
         try {
-            const token = localStorage.getItem('token')
             if (!token) return
-
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            }
             const { data } = await clienteAxios.put(`/productos/${producto.id}`, producto, config)
             const proyectosActualizados = productos.map(proyectoState => proyectoState._id === data._id ? data : proyectoState)
             setProductos(proyectosActualizados)
@@ -71,7 +63,7 @@ const ProductosProvider = ({ children }) => {
             setTimeout(() => {
                 setAlerta({})
                 navigate('/productos')
-            }, 3000);
+            }, 1000);
         } catch (error) {
             console.log(error)
         }
@@ -79,15 +71,7 @@ const ProductosProvider = ({ children }) => {
 
     const nuevoProducto = async producto => {
         try {
-            const token = localStorage.getItem('token')
             if (!token) return
-
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            }
             const { data } = await clienteAxios.post('/productos', producto, config)
             setProductos([...productos, data])
             setAlerta({
@@ -98,7 +82,7 @@ const ProductosProvider = ({ children }) => {
             setTimeout(() => {
                 setAlerta({})
                 navigate('/productos')
-            }, 3000);
+            }, 1000);
         } catch (error) {
             console.log(error)
         }
@@ -107,15 +91,7 @@ const ProductosProvider = ({ children }) => {
     const obtenerProducto = async id => {
         setCargando(true)
         try {
-            const token = localStorage.getItem('token')
             if (!token) return
-
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            }
             const { data } = await clienteAxios(`/productos/${id}`, config)
             setProyecto(data)
             setAlerta({})
@@ -127,7 +103,7 @@ const ProductosProvider = ({ children }) => {
             })
             setTimeout(() => {
                 setAlerta({})
-            }, 3000);
+            }, 1000);
         } finally {
             setCargando(false)
         }
@@ -135,15 +111,7 @@ const ProductosProvider = ({ children }) => {
 
     const eliminarProducto = async id => {
         try {
-            const token = localStorage.getItem('token')
             if (!token) return
-
-            const config = {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${token}`
-                }
-            }
             const { data } = await clienteAxios.delete(`/productos/${id}`, config)
             const proyectosActualizados = productos.filter(proyectoState => proyectoState._id !== id)
             setProductos(proyectosActualizados)
@@ -155,7 +123,7 @@ const ProductosProvider = ({ children }) => {
             setTimeout(() => {
                 setAlerta({})
                 navigate('/productos')
-            }, 3000);
+            }, 1000);
         } catch (error) {
             console.log(error)
         }
@@ -172,12 +140,12 @@ const ProductosProvider = ({ children }) => {
         <ProductosContext.Provider
             value={{
                 productos,
-                mostrarAlerta,
-                alerta,
-                submitProducto,
-                obtenerProducto,
                 producto,
                 cargando,
+                alerta,
+                mostrarAlerta,
+                submitProducto,
+                obtenerProducto,
                 eliminarProducto,
                 cerrarSesionProductos
             }}

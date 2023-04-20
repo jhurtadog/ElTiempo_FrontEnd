@@ -15,9 +15,9 @@ const Header = () => {
     return (
         <header className="px-4 py-5 bg-white border-b">
             <div className="md:flex md:justify-between">
-                <h2 className="text-4xl text-sky-600 font-black text-center mb-5 md:mb-0">
+                <h1 data-testid="titulo-main" className="text-4xl text-sky-600 font-black text-center mb-5 md:mb-0">
                     El Tiempo
-                </h2>
+                </h1>
                 <div className='flex flex-col md:flex-row items-center gap-4'>
                     <Link
                         to="/productos"

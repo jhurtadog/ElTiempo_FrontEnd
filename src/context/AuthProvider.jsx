@@ -43,8 +43,8 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider
             value={{
                 auth,
-                setAuth,
                 cargando,
+                setAuth,
                 cerrarSesionAuth
             }}
         >

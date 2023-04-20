@@ -22,7 +22,6 @@ const FormularioProducto = () => {
         }
     }, [params])
 
-
     const handleSubmit = async e => {
         e.preventDefault();
 

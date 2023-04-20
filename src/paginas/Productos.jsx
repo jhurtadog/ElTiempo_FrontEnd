@@ -8,7 +8,7 @@ const Productos = () => {
 
   return (
     <>
-      <h1 className="text-4xl font-black">Productos</h1>
+      <h2 className="text-4xl font-black">Listado de Productos</h2>
       {msg && <Alerta alerta={alerta} />}
 
       <div className="bg-white shadow mt-10 rounded-lg ">
