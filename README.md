@@ -12,7 +12,7 @@ Creacion de APP utilizando React + Vite
 
 ## BackEnd:
 Realizado en Node y Express, Base de datos en MongoDB
-- Link: https://github.com/jhurtadog/ElTiempo_FrontEnd
+- Link: https://github.com/jhurtadog/ElTiempo_BackEnd
 
 # Inicio de Sesión
 Puedes crear una cuenta y/o iniciar sesión
