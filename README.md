@@ -1,24 +1,29 @@
-# El Tiempo (Front End - APP)
-Proyecto de Prueba Tecnica para El Tiempo
+# Front End - APP (El Tiempo)
+Proyecto de Prueba Técnica para El Tiempo
 
 ## Summary
-Creacion de APP utilizando React + Vite
+Creación de APP utilizando React + Vite
 - Context Opcion
 - Custom Hooks
 - React Route DOM
-- Tailwind
+- Tailwind CSS
 - Mensajes de Error
-- Mucho Mas
+- Mucho Más
 
 ## BackEnd:
-Realizado en Node y Express, Base de datos en MongoDB
+RESTful API realizada en Node, Express
 - Link: https://github.com/jhurtadog/ElTiempo_BackEnd
 
-# Inicio de Sesión
-Puedes crear una cuenta y/o iniciar sesión
+## Ejemplo variables ENV:
+- VITE_BACKEND_URL=
+
+## Base de Datos:
+- Hecha en MongoDB
+
+## Inicio de Sesión
 <img width="1271" alt="Screenshot 2023-04-20 at 11 39 57 AM" src="https://user-images.githubusercontent.com/57419008/233432441-bb7e812a-7ff6-4e52-a43f-b50254320ca5.png">
 
-Crear Cuenta Formulario
+## Crear Cuenta Formulario
 <img width="1271" alt="Screenshot 2023-04-20 at 11 40 06 AM" src="https://user-images.githubusercontent.com/57419008/233432727-1a239693-0b85-44cc-adf7-2ad55cd7f035.png">
 
 # Main Home
