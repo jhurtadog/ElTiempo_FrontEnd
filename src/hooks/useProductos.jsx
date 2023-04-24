@@ -1,8 +1,8 @@
-import { useContext } from 'react'
-import ProductosContext from '../context/ProductosProvider'
+import { useContext } from "react";
+import ProductosContext from "../context/ProductosProvider";
 
 const useProductos = () => {
-    return useContext(ProductosContext)
-}
+  return useContext(ProductosContext);
+};
 
-export default useProductos
+export default useProductos;

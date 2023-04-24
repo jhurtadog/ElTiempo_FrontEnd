@@ -1,10 +1,10 @@
-import useProductos from '../hooks/useProductos'
+import useProductos from "../hooks/useProductos";
 import useAuth from "./useAuth";
 
 const useAdmin = () => {
-    const { producto } = useProductos()
-    const { auth } = useAuth()
-    return producto.creador === auth._id
-}
+  const { producto } = useProductos();
+  const { auth } = useAuth();
+  return producto.creador === auth._id;
+};
 
-export default useAdmin
+export default useAdmin;

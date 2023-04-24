@@ -1,13 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import AuthLayout from './layouts/AuthLayout'
-import RutaProtegida from './layouts/RutaProtegida'
-import Login from './paginas/Login'
-import Registrar from './paginas/Registrar'
-import Productos from './paginas/Productos'
-import NuevoProducto from './paginas/NuevoProducto'
-import EditarProducto from './paginas/EditarProducto'
-import { AuthProvider } from './context/AuthProvider'
-import { ProductosProvider } from './context/ProductosProvider'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AuthLayout from "./layouts/AuthLayout";
+import RutaProtegida from "./layouts/RutaProtegida";
+import Login from "./paginas/Login";
+import Registrar from "./paginas/Registrar";
+import Productos from "./paginas/Productos";
+import NuevoProducto from "./paginas/NuevoProducto";
+import EditarProducto from "./paginas/EditarProducto";
+import { AuthProvider } from "./context/AuthProvider";
+import { ProductosProvider } from "./context/ProductosProvider";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
         </ProductosProvider>
       </AuthProvider>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
